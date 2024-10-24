@@ -10,18 +10,20 @@ const getAllHeroes = async (req, res) => {
     }
 };
 
+
 const getSpecificHero = async (req, res) => {
     const { id } = req.params;
-try{
+try {
     const character = await characterModel.getSpecificCharacterFromFile(id)
     res.json(character);
 } catch(error){
-    res.status(500).json({ message: 'Error fetching specific hero', error: error.message });
-}
+        res.status(500).json({ message: 'Error fetching specific hero', error: error.message });
+    }
 }
 
 
 module.exports = {
 getAllHeroes,
 getSpecificHero
+
 }

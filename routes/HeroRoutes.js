@@ -5,6 +5,7 @@ const logrequest = require('../middlewares/LoggerMiddleware');
 const validationrequest = require('../middlewares/ValidationMiddleware');
 const heroController = require('../controllers/HeroController');
 
+
 /**
  * @swagger
  * /heroes:
@@ -37,8 +38,6 @@ router.get('/heroes', heroController.getAllHeroes);
  *         description: Helt ikke fundet.
  */
 router.get('/heroes/:id',heroController.getSpecificHero);
-
-router.get('/heroes/:id',heroController.getSpecificHero)
 
 
 module.exports = router;

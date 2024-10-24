@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const characterFilePathJSON = require ('../Heroes.json')
 
+
 const getCharactersFromFile = () => {
     try{
         return characterFilePathJSON;
@@ -10,8 +11,8 @@ const getCharactersFromFile = () => {
     }
 };
 
-const getSpecificCharacterFromFile = async (heroid) =>{
-    try{
+const getSpecificCharacterFromFile = async (heroid) => {
+    try {
         const characters = await getCharactersFromFile();
         return characters.find(hero => hero.id === Number(heroid));
     } catch (error) {
@@ -19,7 +20,6 @@ const getSpecificCharacterFromFile = async (heroid) =>{
     }
 
 }
-
 
 module.exports = {
     getCharactersFromFile,
