@@ -1,0 +1,9 @@
+/* HomePageStyling.css */
+
+body {
+    background-color: black; /* Sets the background color to black */
+    color: black; /* Optional: sets text color to white for contrast */
+    font-family: Arial, sans-serif; /* Optional: sets a default font */
+    margin: 0; /* Optional: removes default margin */
+    padding: 20px; /* Optional: adds padding around the content */
+}
