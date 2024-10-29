@@ -1,9 +1,166 @@
-/* HomePageStyling.css */
-
 body {
-    background-color: black; /* Sets the background color to black */
-    color: black; /* Optional: sets text color to white for contrast */
-    font-family: Arial, sans-serif; /* Optional: sets a default font */
-    margin: 0; /* Optional: removes default margin */
-    padding: 20px; /* Optional: adds padding around the content */
+    background-image: url('../Images/Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-y: hidden;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+}
+
+#app {
+    margin: auto;
+}
+
+#hero-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 80vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    width: 100%;
+    margin: auto;
+}
+
+#hero-list-box {
+    height: 80vh;
+    border-radius: 8px;
+    background-color: rgba(78, 78, 78, 0.85);
+    margin: 20px auto;
+    padding: 10px;
+    width: 70%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    font-size: 50px;
+    padding: 5px 10px;
+    letter-spacing: -2px;
+}
+
+li {
+    padding: 10px;
+    background-color: rgba(78, 78, 78, 0.85);
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    background-color: #4E4E4ED8;
+    height: 40px;
+    border-radius: 5px;
+    min-width: 100px;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+}
+
+#modal-add, #modal-info,#modal-update {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modal-content-add, #modal-content-info,#modal-content-update {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+#close-add, #close-info,#close-update {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#close-add:hover, #close-add:focus, #close-info:hover, #close-info:focus, #close-update:hover, #close-update:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-content-info h2, #modal-content-add h2, #modal-content-update h2{
+    color: black;
+}
+
+#modal-content-info p, #modal-content-add p, #modal-content-update p{
+    color: black;
+}
+li {
+    padding: 10px;
+    background-color: rgba(78, 78, 78, 0.85);
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 80px;
+    bottom: 36px;
+    width: 40px;
+    height: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(78, 78, 78, 0.85);
+    border-radius: 5px;
+    z-index: 1;
+    right: 0px;
+    width: 100px;
+}
+
+.dropdown-item {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }

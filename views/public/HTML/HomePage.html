@@ -1,12 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MarvelHeroes</title>
+    <title>Marvel Helte</title>
     <link rel ="stylesheet" href="../../public/CSS/HomePageStyling.css">
 </head>
 <body>
-<h2>Hej</h2>
+<div id="app">
+    <h1>MARVEL</h1>
+    <div id="add-hero">
+        <form id="swForm">
+            <button type="submit">Tilføj en helt</button>
+        </form>
+    </div>
+    <div id="hero-list-box">
+        <div id="hero-list">
+            <ul id="heroes">
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="modal-add">
+    <div id="modal-content-add">
+        <span id="close-add">&times;</span>
+        <h2>Tilføj en karakter</h2>
+        <input type="text" id="hero-name" placeholder="Navn" required>
+        <input type="text" id="hero-alies" placeholder="Alias" required>
+        <button id="add-power">Power</button>
+        <button id="submit-creation">Tilføj</button>
+    </div>
+</div>
+
+<div id="modal-info">
+    <div id="modal-content-info">
+        <span id="close-info">&times;</span>
+        <h2>Helte Information</h2>
+        <p><strong>Name:</strong> <span id="mhero-name"></span></p>
+        <p><strong>Alias:</strong> <span id="mhero-role"></span></p>
+        <p><strong>Powers:</strong> <span id="mhero-planet"></span></p>
+    </div>
+</div>
+<div id="modal-update">
+    <div id="modal-content-update">
+        <span id="close-update">&times;</span>
+        <h2>Opdater helten</h2>
+        <input type="text" id="update-hero-name" placeholder="Navn" required>
+        <input type="text" id="update-hero-role" placeholder="Alias" required>
+        <input type="text" id="update-hero-planet" placeholder="Powers" required>
+        <button id="submit-update-hero">Opdater</button>
+    </div>
+</div>
+
 
 <script src="../../JavaScriptFrontEnd/HeroFrontEnd.js"> </script>
 </body>
