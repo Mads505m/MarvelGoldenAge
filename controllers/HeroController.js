@@ -44,15 +44,15 @@ const updateHero = async (req, res) => {
 }
 
 const deleteHero = async (req, res) => {
-    const { id } = req.body;
+    const { id } = req.params;
     const heroId = parseInt(id, 10);
     try {
         await heroModel.deleteHeroById(heroId);
-        res.json({ message: 'Hero deleted successfully)'});
-    } catch (error){
+        res.status(200).json({ message: 'Hero deleted successfully' });
+    } catch (error) {
         res.status(500).json({ message: 'Error deleting a hero', error: error.message });
     }
-}
+};
 
 module.exports = {
     getAllHeroes,

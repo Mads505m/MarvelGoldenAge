@@ -1,12 +1,22 @@
 [
   {
-    "id": 3,
-    "name": "Human Torch",
-    "alias": "Jim Hammond",
+    "id": 1,
+    "name": "Captain America",
+    "alias": "Steve Rogers",
     "powers": [
-      "Pyrokinesis",
-      "Flight",
-      "Invulnerability"
+      "Super strength",
+      "Enhanced agility",
+      "Vibranium shield"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Namor the Sub-Mariner",
+    "alias": "Namor McKenzie",
+    "powers": [
+      "Aquatic abilities",
+      "Super strength",
+      "Flight"
     ]
   }
 ]

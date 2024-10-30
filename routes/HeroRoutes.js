@@ -39,7 +39,7 @@ router.get('/heroes/:id',heroController.getSpecificHero);
 
 router.post('/heroes', heroController.createHero);
 
-router.delete('/heroes', heroController.deleteHero);
+router.delete('/heroes/:id', heroController.deleteHero);
 
 router.put('/heroes/:id', heroController.updateHero);
 

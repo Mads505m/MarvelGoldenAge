@@ -1,6 +1,5 @@
 const fs = require('fs').promises;
 const path = require('path');
-const heroFilePathJSON = require ('../Heroes.json')
 const HERO_FILE_PATH = path.join(__dirname, '../Heroes.json');
 
 const saveHeroes = async (heroes) => {
@@ -12,9 +11,10 @@ const saveHeroes = async (heroes) => {
     }
 };
 
-const getCharactersFromFile = () => {
-    try{
-        return heroFilePathJSON;
+const getCharactersFromFile = async () => {
+    try {
+        const data = await fs.readFile(HERO_FILE_PATH, 'utf-8');
+        return JSON.parse(data);
     } catch (error) {
         throw new Error('Error reading the character file: ' + error.message);
     }
@@ -69,13 +69,13 @@ const deleteHeroById = async (id) => {
     try {
         const data = await fs.readFile(HERO_FILE_PATH, 'utf-8');
         const heroes = JSON.parse(data);
-        const hero = heroes.filter(hero => hero.id !== id);
+        const updatedHeroes = heroes.filter(hero => hero.id !== id);
 
-        await fs.writeFile(HERO_FILE_PATH, JSON.stringify(hero, null, 2))
+        await saveHeroes(updatedHeroes); // Save the filtered list
     } catch (error) {
         throw new Error(`Error deleting hero: ${error.message}`);
     }
-}
+};
 
 module.exports = {
     getCharactersFromFile,

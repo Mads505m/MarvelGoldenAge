@@ -161,28 +161,24 @@ function updateHero(heroId, updatedData) {
         });
 }
 
-// Delete hero
 function deleteHero(heroId) {
-    fetch(`/heroes`, {
+    fetch(`/heroes/${heroId}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: heroId })
     })
         .then(response => {
             if (!response.ok) {
                 console.error('Failed to delete hero', response);
                 return;
             }
-            return response.json();
-        })
-        .then(() => {
             console.log('Hero deleted');
             fetchHeroes();
         })
-        .catch((error) => {
+        .catch(error => {
             console.error('Error deleting hero', error);
         });
 }
+
 
 
 // Modals
