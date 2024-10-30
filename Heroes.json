@@ -16,5 +16,13 @@
       "Green",
       "Tall"
     ]
+  },
+  {
+    "id": 6,
+    "name": "Tony Stark",
+    "alias": "Jens Jensen",
+    "powers": [
+      "Powers"
+    ]
   }
 ]

@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 const heroController = require('../controllers/HeroController');
-
+const { validateHero } = require('../Validations/HeroValidation');
 
 /**
  * @swagger
@@ -55,7 +54,7 @@ router.get('/heroes/:id',heroController.getSpecificHero);
  *       400:
  *         description: Ugyldige input.
  */
-router.post('/heroes', heroController.createHero);
+router.post('/heroes',validateHero, heroController.createHero);
 
 /**
  * @swagger
@@ -97,6 +96,6 @@ router.delete('/heroes/:id', heroController.deleteHero);
  *       404:
  *          description: Helt ikke fundet.
  */
-router.put('/heroes/:id', heroController.updateHero);
+router.put('/heroes/:id',validateHero, heroController.updateHero);
 
 module.exports = router;
