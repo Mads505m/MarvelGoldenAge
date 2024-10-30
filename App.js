@@ -7,7 +7,7 @@ const heroRoutes = require('./routes/HeroRoutes');
 const homeRoute = require('./routes/HomePageRoute')
 const path = require('path');
 require('dotenv').config({ path: '.env' });
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const app = express();
 
 
