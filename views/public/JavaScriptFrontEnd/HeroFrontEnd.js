@@ -178,8 +178,7 @@ function deleteHero(heroId) {
                 return;
             }
             console.log('Hero deleted');
-            // Reload the hero list
-            fetchHeroes(); // This ensures that the UI updates after deletion
+            fetchHeroes();
         })
         .catch(error => {
             console.error('Error deleting hero', error);
