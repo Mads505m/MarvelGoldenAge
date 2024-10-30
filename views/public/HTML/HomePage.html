@@ -8,19 +8,19 @@
 </head>
 <body>
 <div id="app">
-    <h1>MARVEL</h1>
-    <div id="add-hero">
-        <form id="swForm">
-            <button type="submit">Tilføj en helt</button>
-        </form>
+    <div id="header">
+        <h1>MARVEL</h1>
+        <div id="add-hero">
+            <form id="marvelForm">
+                <button type="submit">Opret</button>
+            </form>
+        </div>
     </div>
-    <div id="hero-list-box">
         <div id="hero-list">
             <ul id="heroes">
 
             </ul>
         </div>
-    </div>
 </div>
 
 <div id="modal-add">
@@ -28,8 +28,8 @@
         <span id="close-add">&times;</span>
         <h2>Tilføj en karakter</h2>
         <input type="text" id="hero-name" placeholder="Navn" required>
-        <input type="text" id="hero-alies" placeholder="Alias" required>
-        <button id="add-power">Power</button>
+        <input type="text" id="hero-alias" placeholder="Alias" required>
+        <input type="text" id="hero-powers" placeholder="Powers (use , for different power)" required>
         <button id="submit-creation">Tilføj</button>
     </div>
 </div>
@@ -48,8 +48,8 @@
         <span id="close-update">&times;</span>
         <h2>Opdater helten</h2>
         <input type="text" id="update-hero-name" placeholder="Navn" required>
-        <input type="text" id="update-hero-role" placeholder="Alias" required>
-        <input type="text" id="update-hero-planet" placeholder="Powers" required>
+        <input type="text" id="update-hero-alias" placeholder="Alias" required>
+        <input type="text" id="update-hero-powers" placeholder="Powers" required>
         <button id="submit-update-hero">Opdater</button>
     </div>
 </div>

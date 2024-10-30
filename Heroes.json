@@ -8,33 +8,5 @@
       "Flight",
       "Invulnerability"
     ]
-  },
-  {
-    "id": 4,
-    "name": "The Angel",
-    "alias": "Thomas Halloway",
-    "powers": [
-      "Peak human condition",
-      "Martial arts",
-      "Detective skills"
-    ]
-  },
-  {
-    "id": 5,
-    "name": "The Angelll",
-    "alias": "Thomas Halloway",
-    "powers": [
-      "Peak human condition",
-      "Martial arts"
-    ]
-  },
-  {
-    "id": 6,
-    "name": "The Angelll",
-    "alias": "Thomas Halloway",
-    "powers": [
-      "Peak human condition",
-      "Martial arts"
-    ]
   }
 ]
