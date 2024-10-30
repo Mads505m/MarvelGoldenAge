@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Captain America",
-    "alias": "Steve Rogers",
-    "powers": [
-      "Super strength",
-      "Enhanced agility",
-      "Vibranium shield"
-    ]
-  },
-  {
     "id": 2,
     "name": "Namor the Sub-Mariner",
     "alias": "Namor McKenzie",

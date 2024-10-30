@@ -28,7 +28,7 @@ function fetchHeroes() {
                 `;
 
                 informationButton.addEventListener('click', () => {
-                    console.log('Clicked'); // Mangler
+                    openInfoModal(hero);
                 });
 
                 menuButton.addEventListener('click', (event) => {
@@ -64,14 +64,13 @@ function setUpEventListener() {
         event.preventDefault();
         openAddModal();
     });
-    
 
     document.getElementById('close-add').addEventListener('click', closeAddModal);
     document.getElementById('close-info').addEventListener('click', closeInfoModal);
     document.getElementById('close-update').addEventListener('click', closeUpdateModal);
 
     createHero();
-    updatedHero();
+    setUpUpdateHeroEventListener();
 }
 
 
@@ -81,22 +80,22 @@ function handleHeroCreation(event) {
     event.preventDefault();
     const name = document.getElementById('hero-name').value;
     const alias = document.getElementById('hero-alias').value;
-    //const powersInput = document.getElementById('hero-powers').value;
+    const powersInput = document.getElementById('hero-powers').value;
 
-    if(!name || !alias) {
+    if(!name || !alias || !powersInput) {
         alert('Please fill out all fields.');
         return;
     }
 
+    const powerArray = powersInput.split(',').map(power => properCase(power.trim()));
+
     const hero = {
         name: properCase(name),
         alias: properCase(alias),
-        powers: 'powers'
+        powers: powerArray
     };
     addHero(hero);
     closeAddModal();
-    document.getElementById('hero-name').value = '';
-    document.getElementById('hero-alias').value = '';
 }
 
 function createHero(){
@@ -120,27 +119,34 @@ function addHero(heroData){
 }
 
 // Update hero
-function updatedHero(){
-    document.getElementById('submit-update-hero').addEventListener('submit', (event) => {
-        event.preventDefault();
-        const name = document.getElementById('update-hero-name').value;
-        const alias = document.getElementById('update-hero-alias').value;
-        const powers = document.getElementById('update-hero-powers').value;
-        const heroId = this.dataset.heroId;
+function handleUpdateHero(event){
+    event.preventDefault();
+    const name = document.getElementById('update-hero-name').value;
+    const alias = document.getElementById('update-hero-alias').value;
+    const powers = document.getElementById('update-hero-powers').value;
+    const heroId = this.dataset.heroId;
 
-        if(!name || !alias){
-            alert('Please fill out all fields.');
-            return;
-        }
+    if(!name || !alias || !powers){
+        alert('Please fill out all fields.');
+        return;
+    }
 
-        const updatedData = {
-            name: name,
-            alias: alias,
-        };
+    const powerArray = powers.split(',').map(power => properCase(power.trim()));
 
-        updateHero(heroId, updatedData);
-        closeUpdateModal();
-    });
+    const updatedData = {
+        name: properCase(name),
+        alias: properCase(alias),
+        powers: powerArray
+    };
+
+    updateHero(heroId, updatedData);
+    closeUpdateModal();
+}
+
+function setUpUpdateHeroEventListener() {
+    const submitButton = document.getElementById('submit-update-hero');
+    submitButton.removeEventListener('click', handleUpdateHero);
+    submitButton.addEventListener('click', handleUpdateHero);
 }
 
 function updateHero(heroId, updatedData) {
@@ -172,14 +178,13 @@ function deleteHero(heroId) {
                 return;
             }
             console.log('Hero deleted');
-            fetchHeroes();
+            // Reload the hero list
+            fetchHeroes(); // This ensures that the UI updates after deletion
         })
         .catch(error => {
             console.error('Error deleting hero', error);
         });
 }
-
-
 
 // Modals
 
@@ -189,12 +194,12 @@ function openAddModal() {
     createHero();
 }
 
-function openInfoModal() {
-    document.getElementById('modal-info').addEventListener('submit', (event) => {
-        event.preventDefault();
-        const modal = document.getElementById('modal-info');
-        modal.style.display = 'block';
-    });
+function openInfoModal(hero) {
+    const modal = document.getElementById('modal-info');
+    document.getElementById('mhero-name').textContent = hero.name;
+    document.getElementById('mhero-alias').textContent = hero.alias;
+    document.getElementById('mhero-powers').textContent = hero.powers;
+    modal.style.display = 'block';
 }
 
 function openUpdateModal(hero) {
@@ -204,11 +209,14 @@ function openUpdateModal(hero) {
     document.getElementById('update-hero-powers').value = hero.powers;
     document.getElementById('submit-update-hero').dataset.heroId = hero.id;
     modal.style.display = 'block';
-    updatedHero(hero.id);
+    setUpUpdateHeroEventListener();
 }
 
 function closeAddModal() {
     const modal = document.getElementById('modal-add');
+    document.getElementById('hero-name').value = '';
+    document.getElementById('hero-alias').value = '';
+    document.getElementById('hero-powers').value = '';
     modal.style.display = 'none';
 }
 

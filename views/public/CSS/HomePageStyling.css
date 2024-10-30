@@ -156,6 +156,9 @@ input::placeholder {
     background-color: rgba(78, 78, 78, 0.85);
     border-radius: 5px;
     z-index: 1;
+    right: 0;
+    top: 1px;
+    margin-right: 150px;
     width: 100px;
 }
 
