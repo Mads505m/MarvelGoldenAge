@@ -1,4 +1,5 @@
 const swaggerJsDoc = require('swagger-jsdoc');
+require('dotenv').config();
 
 // Swagger-konfiguration
 const swaggerOptions = {
@@ -11,7 +12,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: "http://localhost:3000",
+                url: `http://localhost:${process.env.PORT || 8080}`,
             },
         ],
         components: {
@@ -48,7 +49,7 @@ const swaggerOptions = {
             }
         }
     },
-    apis: ["./routes/*.js"], // Stien til dine rute-filer
+    apis: ["./routes/*.js"],
 };
 
 // Generer Swagger-specifikationer
