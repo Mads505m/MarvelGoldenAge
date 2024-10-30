@@ -1,15 +1,5 @@
 [
   {
-    "id": 2,
-    "name": "Namor the Sub-Mariner",
-    "alias": "Namor McKenzie",
-    "powers": [
-      "Aquatic abilities",
-      "Super strength",
-      "Flight"
-    ]
-  },
-  {
     "id": 4,
     "name": "Tony Stark",
     "alias": "Jens Jensen",
@@ -26,5 +16,8 @@
       "Green",
       "Tall"
     ]
+  },
+  {
+    "id": 6
   }
 ]
