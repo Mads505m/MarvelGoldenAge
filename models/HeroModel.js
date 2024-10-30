@@ -1,6 +1,5 @@
 const fs = require('fs').promises;
 const path = require('path');
-const heroFilePathJSON = require ('../Heroes.json')
 const HERO_FILE_PATH = path.join(__dirname, '../Heroes.json');
 
 const saveHeroes = async (heroes) => {
@@ -12,9 +11,10 @@ const saveHeroes = async (heroes) => {
     }
 };
 
-const getCharactersFromFile = () => {
-    try{
-        return heroFilePathJSON;
+const getCharactersFromFile = async () => {
+    try {
+        const data = await fs.readFile(HERO_FILE_PATH, 'utf-8');
+        return JSON.parse(data);
     } catch (error) {
         throw new Error('Error reading the character file: ' + error.message);
     }

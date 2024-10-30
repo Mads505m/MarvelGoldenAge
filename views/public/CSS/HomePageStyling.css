@@ -76,7 +76,7 @@ li {
 button {
     background-color: #4E4E4ED8;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 8px;
     min-width: 100px;
     color: white;
 }
@@ -87,7 +87,13 @@ button:hover {
 
 input {
     height: 40px;
-    border-radius: 5px;
+    border-radius: 8px;
+    background-color: rgb(78, 78, 78);
+    color: white;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5)
 }
 
 #modal-add, #modal-info,#modal-update {
@@ -103,11 +109,12 @@ input {
 }
 
 #modal-content-add, #modal-content-info,#modal-content-update {
-    background-color: #fefefe;
+    background-color: rgba(78, 78, 78, 0.95);
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 45%;
+    border-radius: 8px;
 }
 
 #close-add, #close-info,#close-update {
@@ -123,12 +130,8 @@ input {
     cursor: pointer;
 }
 
-#modal-content-info h2, #modal-content-add h2, #modal-content-update h2{
-    color: black;
-}
-
 #modal-content-info p, #modal-content-add p, #modal-content-update p{
-    color: black;
+    color: white;
 }
 
 .menu-button {

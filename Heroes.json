@@ -8,5 +8,23 @@
       "Flight",
       "Invulnerability"
     ]
+  },
+  {
+    "id": 4,
+    "name": "Tony Stark",
+    "alias": "Jens Jensen",
+    "powers": [
+      "Powers"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Hulk Smash",
+    "alias": "Hulkmanden",
+    "powers": [
+      "Strong",
+      "Green",
+      "Tall"
+    ]
   }
 ]
